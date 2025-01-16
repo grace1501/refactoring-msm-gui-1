@@ -13,8 +13,8 @@ class MoviesController < ApplicationController
   end
 
   def create
-    max_id = Movie.maximum(:id)
-    ActiveRecord::Base.connection.execute("ALTER SEQUENCE movies_id_seq RESTART WITH #{max_id.to_i + 1}")
+    # max_id = Movie.maximum(:id)
+    # ActiveRecord::Base.connection.execute("ALTER SEQUENCE movies_id_seq RESTART WITH #{max_id.to_i + 1}")
 
     @the_movie = Movie.new
     @the_movie.title = params.fetch("query_title")
